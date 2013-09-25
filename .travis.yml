@@ -9,7 +9,7 @@ gemfile:
   - gemfiles/rails3.2.x.gemfile
   - gemfiles/rails4.0.x.gemfile
 after_success:
-  - script/quality
+  - ./script/quality
 matrix:
   include:
     - rvm:      2.0.0
