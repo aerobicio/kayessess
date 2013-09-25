@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styleguide</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= stylesheet_link_tag "styleguide", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="kayessess">
+  <header role="banner" class="kayessess__header">
+    <%= link_to'Styleguide', kayessess.root_path, class: 'kayessess__header' %>
+    <nav>
+
+    </nav>
+  </header>
+  <section role="main" class="kayessess__main">
+    <%= yield %>
+  </section>
+  <footer role="contentinfo" class="kayessess__footer">
+    footer
+  </footer>
+</body>
+</html>

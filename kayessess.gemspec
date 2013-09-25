@@ -13,13 +13,13 @@ Gem::Specification.new do |s|
   s.description   = 'A Rails plugin/gem for helping to get KSS into your Rails app'
   s.licenses      = ['MIT']
 
-  s.files         = Dir["README.md", "lib/**/*"]
+  s.files         = Dir["{app,config,lib}/**/*", "README.md", "MIT-LICENSE"]
   s.test_files    = Dir["spec/**/*"]
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
   s.add_dependency 'rails', '>= 3.0.0'
-  s.add_dependency 'kss'
+  s.add_dependency 'kss', '>= 0.5.0'
   s.add_dependency 'bourbon'
 
   s.add_development_dependency 'rspec'
