@@ -11,4 +11,5 @@ if [[ $TRAVIS || $CI ]]; then
 fi
 
 bin/rake spec:appraisal:rails4.0.x spec:unit COVERAGE=true
-bin/rake spec:quality
+
+script/quality
