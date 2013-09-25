@@ -1,0 +1,14 @@
+module Kayessess
+  class ApplicationController < ActionController::Base
+    skip_before_filter :login_required
+    before_filter :parse_styles
+
+    private
+
+    def parse_styles
+      require 'kss'
+      parser = Kss::Parser.new(File.join(Rails.root, '/app/assets/stylesheets'))
+      @styleguide = Kayessess::Styleguide.new(parser)
+    end
+  end
+end
