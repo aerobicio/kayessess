@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Specify dependencies in kayessess.gemspec
 gemspec
 
-gem 'kss', github: 'kneath/kss'
-
 group :test, :development do
   gem 'actionpack'
   gem 'appraisal'

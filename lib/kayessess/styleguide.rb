@@ -1,4 +1,7 @@
 module Kayessess
+
+  # The Styleguide object is responsible for massaging a KSS parser object
+  # into a more useful structure for display in a UI
   class Styleguide
     attr_accessor :sections
 

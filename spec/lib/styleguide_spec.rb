@@ -15,6 +15,11 @@ describe Kayessess::Styleguide do
     )
   }
 
+  describe "#to_partial_path" do
+    subject { styleguide.to_partial_path }
+    it { should == "styleguide" }
+  end
+
   describe "#sections" do
     it "should build a tree based on styleguide section structure" do
       styleguide.sections().should == {
@@ -28,6 +33,10 @@ describe Kayessess::Styleguide do
           }
         }
       }
+    end
+
+    it "should raise an exception if the tree contains two identical styleguide references" do
+      pending()
     end
   end
 end
