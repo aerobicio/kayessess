@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 # Specify dependencies in kayessess.gemspec
 gemspec
 
-group :test do
+group :test, :development do
+  gem 'actionpack'
   gem 'appraisal'
   gem 'cane'
   gem 'combustion', '~> 0.4.0'
@@ -13,4 +14,5 @@ group :test do
   gem 'rspec-rails', '~> 2.13'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'sprockets'
 end

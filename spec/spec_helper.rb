@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 
 if ENV['COVERAGE']
   require_relative 'use_coveralls' if ENV['TRAVIS']
-  require_relative 'use_simplecov'
+  require_relative 'use_simplecov' unless ENV['TRAVIS']
 end
 
 require 'bundler/setup'
@@ -10,7 +10,7 @@ require 'combustion'
 require 'rails'
 require 'kayessess'
 
-Combustion.initialize! :action_controller, :action_view
+Combustion.initialize! :action_controller, :action_view, :sprockets
 
 require 'rspec/rails'
 require 'rspec/autorun'
