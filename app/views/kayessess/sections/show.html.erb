@@ -1,3 +1,10 @@
-sections#show
+<h1><%= @section_name %></h1>
 
-<%= @section %>
+<hr>
+
+derp
+
+<ol>
+  <%= @section.inspect %>
+  <%= render :partial => "section", :collection => @section %>
+</ol>

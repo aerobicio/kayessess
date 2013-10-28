@@ -1,3 +1,27 @@
+@charset "utf-8";
+
+// Namespace everything inside a class-scope
+// ----------------------------------------
 .kayessess {
 
+  // External Mixins and Constants
+  // ----------------------------------------
+  @import "bourbon";
+  @import "constants";
+  @import "neat";
+
+
+  // Mixins, functions and placeholders
+  // ----------------------------------------
+  @import "lib/mixins";
+  @import "lib/functions";
+
+
+  // Base styles, unclassed HTML elems, reset
+  // ----------------------------------------
+  @import "lib/reset";
+  @import "lib/base";
+  @import "lib/spacing";
+
+  @import "layout/*";
 }

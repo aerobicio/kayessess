@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html class="kayessess">
 <head>
   <title>Styleguide</title>
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= stylesheet_link_tag "styleguide", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="kayessess">
+<body>
   <header role="banner" class="kayessess__header">
-    <%= link_to'Styleguide', kayessess.root_path, class: 'kayessess__header' %>
-    <nav>
-
+    <%= link_to'Styleguide', kayessess.root_path, class: 'kayessess__masthead' %>
+    <nav class="kayessess__navigation">
+      <%= section_navigation %>
     </nav>
   </header>
   <section role="main" class="kayessess__main">

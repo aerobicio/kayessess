@@ -1,3 +1,6 @@
+require_relative "section"
+require_relative "tree"
+
 module Kayessess
 
   # The Styleguide object is responsible for massaging a KSS parser object
@@ -7,10 +10,15 @@ module Kayessess
 
     def initialize(parser)
       @parser = parser
+      @section_tree ||= build_section_tree(@parser.sections)
     end
 
     def sections
-      @section_tree ||= build_section_tree(@parser.sections)
+      @section_tree
+    end
+
+    def section(section)
+      @section_tree[section.to_sym]
     end
 
     def to_partial_path
@@ -20,14 +28,9 @@ module Kayessess
     private
 
     def build_section_tree(sections)
-      sections.inject({}) {|tree, section|
-        ref_parts = split_styleguide_ref(section.first)
-        ref_parts.inject(tree) {|branch, key|
-          branch[key] ||= ((key == ref_parts.last) ? section.last : {})
-          branch[key]
-        }
-        tree
-      }
+      sections.inject(Kayessess::Tree.new) {|tree, section|
+        tree.add(section)
+      }.root
     end
 
     def split_styleguide_ref(ref)

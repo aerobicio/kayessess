@@ -2,22 +2,23 @@ require_relative "../../lib/kayessess/styleguide"
 
 describe Kayessess::Styleguide do
   let(:styleguide) { Kayessess::Styleguide.new(parser) }
-  let(:section1) { double(:section) }
-  let(:section2) { double(:section) }
-  let(:section3) { double(:section) }
+  let(:section1) { "section1" }
+  let(:section2) { "section2" }
+  let(:section3) { "section3" }
+  let(:section4) { "section4" }
   let(:parser) {
     double(:parser,
       sections: [
-        ["Root.Widgets.Buttons", section1],
-        ["Root.Widgets.Panels", section2],
-        ["Root.Forms.Inputs", section3]
+        ["Widgets.Buttons", section1],
+        ["Widgets.Panels", section2],
+        ["Forms", section3],
+        ["Forms.Inputs", section4]
       ]
     )
   }
 
   describe "#to_partial_path" do
-    subject { styleguide.to_partial_path }
-    it { should == "styleguide" }
+    its(:to_partial_path) { should == "styleguide" }
   end
 
   describe "#sections" do
@@ -29,7 +30,7 @@ describe Kayessess::Styleguide do
             :panels => section2,
           },
           :forms => {
-            :inputs => section3
+            :inputs => section4
           }
         }
       }

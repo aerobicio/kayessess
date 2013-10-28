@@ -3,7 +3,7 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'kayessess/version'
 
 Gem::Specification.new do |s|
-  s.name          = 'kayessess'
+  s.name          = Kayessess::PACKAGE
   s.version       = Kayessess::VERSION
   s.platform      = Gem::Platform::RUBY
   s.authors       = ['Justin Morris']
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 3.0.0'
   s.add_dependency 'kss', '>= 0.5.0'
   s.add_dependency 'bourbon'
+  s.add_dependency 'pry'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rake'

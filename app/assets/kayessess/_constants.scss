@@ -1,0 +1,31 @@
+@import "neat-helpers";
+
+// Root type sizing
+// ----------------------------------------
+$base-font-size:            1.0;
+$line-height-ratio:         1.5;
+
+// Spacing units and sizings
+// ----------------------------------------
+$_spacing-tight:            0.7rem;
+$_spacing-medium:           1.4rem;
+$_spacing-wide:             2.8rem;
+$_spacing-superwide:        3.6rem;
+
+// Grid & layout structure
+// ----------------------------------------
+$_grid-prefix:              unquote("");
+$column:                    10rem;
+$gutter:                    2rem;
+$grid-columns:              6;
+$max-width:                 140rem;
+$visual-grid:               false;
+$visual-grid-index:         front;
+$visual-grid-color:         #C75D48;
+$visual-grid-opacity:       0.05;
+
+// Style
+// ----------------------------------------
+$font-family:               'Helvetica Neue', Helvetica, Arial, sans-serif;
+$background-color:          #ffffff;
+$color:                     #2B315C;

@@ -1,3 +1,4 @@
 module Kayessess
-  VERSION = '0.1.0'
+  PACKAGE = 'kayessess'
+  VERSION = '0.0.1'
 end

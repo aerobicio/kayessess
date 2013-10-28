@@ -2,6 +2,9 @@
 
 source "https://rubygems.org"
 
+gem "bourbon"
+gem "neat"
+gem "awesome_print"
 gem "rails", "~> 3.1"
 
 gemspec :path=>"../"
