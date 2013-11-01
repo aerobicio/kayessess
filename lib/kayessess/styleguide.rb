@@ -10,31 +10,19 @@ module Kayessess
 
     def initialize(parser)
       @parser = parser
-      @section_tree ||= build_section_tree(@parser.sections)
+      @tree ||= Kayessess::Tree.new(@parser.sections)
     end
 
     def sections
-      @section_tree
+      @tree
     end
 
     def section(section)
-      @section_tree[section.to_sym]
+      @tree.node_for_path(section.split('/'))
     end
 
     def to_partial_path
       "styleguide"
-    end
-
-    private
-
-    def build_section_tree(sections)
-      sections.inject(Kayessess::Tree.new) {|tree, section|
-        tree.add(section)
-      }.root
-    end
-
-    def split_styleguide_ref(ref)
-      ref.split(".").map {|e| e.downcase.to_sym}
     end
   end
 end

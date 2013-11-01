@@ -8,12 +8,12 @@ Gem::Specification.new do |s|
   s.platform      = Gem::Platform::RUBY
   s.authors       = ['Justin Morris']
   s.email         = ['desk@pixelbloom.com']
-  s.homepage      = 'https://github.com/plasticine/kayessess'
-  s.summary       = 'A Rails gem for simplifying using KSS'
-  s.description   = 'A Rails plugin/gem for helping to get KSS into your Rails app'
+  s.homepage      = 'https://github.com/aerobicio/kayessess'
+  s.summary       = 'A Rails gem for simplifying using KSS.'
+  s.description   = 'A Rails plugin/gem for helping to get KSS into your Rails app.'
   s.licenses      = ['MIT']
 
-  s.files         = Dir["{app,config,lib}/**/*", "README.md", "MIT-LICENSE"]
+  s.files         = Dir["{app,config,lib}/**/*", "README.md", "LICENSE"]
   s.test_files    = Dir["spec/**/*"]
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 3.0.0'
   s.add_dependency 'kss', '>= 0.5.0'
   s.add_dependency 'bourbon'
-  s.add_dependency 'pry'
 
+  s.add_development_dependency 'pry'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'simplecov'

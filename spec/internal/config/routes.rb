@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Kayessess::Engine, at: "styleguide"
+  mount Kayessess::Engine => "/styleguide"
 end

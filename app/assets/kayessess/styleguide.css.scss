@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-// Namespace everything inside a class-scope
+// Namespace everything inside a scope
 // ----------------------------------------
 .kayessess {
 
@@ -23,5 +23,5 @@
   @import "lib/base";
   @import "lib/spacing";
 
-  @import "layout/*";
+  // @import "layout/*";
 }

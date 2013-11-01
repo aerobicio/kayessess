@@ -2,9 +2,8 @@ module Kayessess
 
   # A wrapper around KSS section object
   class Section
-    def initialize(key, section)
-      # @key     = key
-      # @section = section
+    def initialize(section)
+      @section = section
     end
 
     def to_partial_path
