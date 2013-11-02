@@ -1,15 +1,19 @@
 @charset "utf-8";
 
+// External Mixins and Constants
+// ----------------------------------------
+@import "bourbon";
+@import "constants";
+@import "neat";
+
+// only apply a reset to things that are kayessess
+[class*=kayessess] {
+  @import "lib/reset";
+}
+
 // Namespace everything inside a scope
 // ----------------------------------------
 .kayessess {
-
-  // External Mixins and Constants
-  // ----------------------------------------
-  @import "bourbon";
-  @import "constants";
-  @import "neat";
-
 
   // Mixins, functions and placeholders
   // ----------------------------------------
@@ -17,11 +21,12 @@
   @import "lib/functions";
 
 
-  // Base styles, unclassed HTML elems, reset
+  // Base styles, unclassed HTML elems
   // ----------------------------------------
-  @import "lib/reset";
   @import "lib/base";
   @import "lib/spacing";
 
-  // @import "layout/*";
+  @import "layout/*";
+
+  @import "lib/syntax"
 }

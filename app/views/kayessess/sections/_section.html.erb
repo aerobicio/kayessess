@@ -1,3 +1,23 @@
-<li>
-  test
-</li>
+<article class="kayessess__section">
+  <header>
+    <%= link_to example_section_path(params[:id]) do %>
+      <h2 class="kayessess__section__heading">
+        <code class="kayessess__code"><%= section.name %> - <%= section.filename %></code>
+      </h2>
+    <% end %>
+  </header>
+  <div class="kayessess__section__description">
+    <%= section.description %>
+    <% if section.modifiers.any? %>
+      <table class="kayessess__section__modifiers">
+        <% section.modifiers.each do |modifier| %>
+          <tr>
+            <td><code><%= modifier.name %></code></td>
+            <td><%= modifier.description %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+  <%= render :partial => section.example_partial_path, locals: {section: section} %>
+</article>

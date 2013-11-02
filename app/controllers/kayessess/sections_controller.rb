@@ -8,8 +8,7 @@ module Kayessess
     end
 
     def show
-      @section_name = params[:id]
-      @section      = @styleguide.section(params[:id])
+      @node = @styleguide.section(params[:id])
     end
   end
 end

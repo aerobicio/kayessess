@@ -1,0 +1,42 @@
+//  Primary button style.
+//
+// :hover   - Hover state
+// :active  - Active state
+// :focus   - Focus state
+//
+// Styleguide Buttons.Primary
+.button {
+  background-color: pink;
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+//  Secondary button style.
+//
+// :hover   - Hover state
+// :active  - Active state
+// :focus   - Focus state
+//
+// Styleguide Buttons.Secondary
+.button--secondary {
+  @extend .button;
+
+  background-color: orangered;
+  padding: 5px 10px;
+}
+
+//  Special silly icon button style thing.
+//
+// :hover   - Hover state
+// :active  - Active state
+// :focus   - Focus state
+//
+// Styleguide Buttons.Special.Icon Button
+.icon-button {
+  @extend .button;
+
+  background-color: red;
+}

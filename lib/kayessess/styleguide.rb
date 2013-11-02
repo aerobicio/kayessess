@@ -18,7 +18,11 @@ module Kayessess
     end
 
     def section(section)
-      @tree.node_for_path(section.split('/'))
+      sections.node_for_path(section.split('/'))
+    end
+
+    def root_sections
+      sections.root_sections
     end
 
     def to_partial_path

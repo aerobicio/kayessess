@@ -1,4 +1,1 @@
-<pre>
-  <%= @section.inspect %>
-</pre>
-<%= render :partial => "section", :collection => @section %>
+<%= render :partial => "node", :locals => {:node => @node} %>

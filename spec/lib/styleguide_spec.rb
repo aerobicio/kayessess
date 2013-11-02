@@ -1,11 +1,9 @@
 require_relative "../../lib/kayessess/styleguide"
 
 describe Kayessess::Styleguide do
-  subject { Kayessess::Styleguide.new(parser) }
-  let(:parser) { double() }
+  subject(:styleguide) { Kayessess::Styleguide.new(parser) }
+  let(:parser) { double(sections: []) }
   let(:tree) { double(Kayessess::Tree) }
-
-  before { parser.should_receive(:sections) }
 
   describe "#sections" do
     pending

@@ -8,3 +8,4 @@ bin/
 coverage/
 gemfiles/*.lock
 spec/internal/tmp/
+tmp/

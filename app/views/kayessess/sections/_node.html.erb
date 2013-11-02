@@ -1,0 +1,15 @@
+<section class="kayessess__node">
+  <h1 class="kayessess__node__heading">
+    <%= node.name %>
+  </h1>
+
+  <div class="kayessess__node__sections">
+    <% node.sections.each do |section| %>
+      <%= render :partial => "section", :locals => {:section => section} %>
+    <% end %>
+  </div>
+
+  <% node.children.each do |node| %>
+    <%= render :partial => "node", :locals => {:node => node} %>
+  <% end %>
+</section>

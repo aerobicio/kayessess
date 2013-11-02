@@ -1,0 +1,16 @@
+<section class="kayessess__example <%= section_example.extra_classes %>">
+  <%= section_example.html %>
+</section>
+
+<section class="kayessess__modifiers">
+  <% section_example.modifiers.each do |modifier| %>
+    <div class="kayessess__modifiers__modifier">
+      <code class="kayessess__code"><%= modifier.name %></code>
+      <%= section_example.html_for_modifier(modifier) %>
+    </div>
+  <% end %>
+</section>
+
+<div class="kayessess__example__code">
+  <%= section_example.html_unescaped %>
+</div>
