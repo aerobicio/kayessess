@@ -1,3 +1,8 @@
 .kayessess__masthead {
+  @extend .padding-medium;
+  @extend .padding-wide-left;
+  @extend .padding-wide-right;
+
   text-transform: uppercase;
+  font-weight: bold;
 }

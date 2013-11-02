@@ -13,7 +13,7 @@
 
 // Namespace everything inside a scope
 // ----------------------------------------
-.kayessess {
+html.kayessess {
 
   // Mixins, functions and placeholders
   // ----------------------------------------
@@ -28,5 +28,7 @@
 
   @import "layout/*";
 
-  @import "lib/syntax"
+  @import "lib/syntax";
+
+  @import "modules/*";
 }

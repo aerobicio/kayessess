@@ -1,10 +1,10 @@
 // Use border-box for everything by default, even :before and :after
-*{ &, &:before, &:after{ @include box-sizing(border-box); } }
+[class*=kayessess]{ &, &:before, &:after{ @include box-sizing(border-box); } }
 
 // 1. Keeps page centred in all browsers regardless of content height
 // 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
 //    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
-html {
+html.kayessess {
   overflow-y: scroll; // 1
   -webkit-text-size-adjust: 100%; // 2
   -ms-text-size-adjust: 100%; // 2
@@ -19,95 +19,24 @@ body {
   line-height:1; // 2
 }
 
-// Forms
-// ------------------------------------------------
-form {
-  margin:0;
-}
-
-fieldset {
-  margin:0;
-  padding:0;
-  border:0;
-}
-
-// 1. Corrects font size not being inherited in all browsers
-// 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
-// 3. Improves appearance and consistency in all browsers
-button,
-input,
-select,
-textarea {
-  font-size: 100%; // 1
-  font-family:inherit; // 1
-  margin: 0; // 2
-  padding:0; // 2
-  vertical-align: baseline; // 3
-  *vertical-align: middle; // 3
-}
-
-// 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
-// 2. Corrects inner spacing displayed oddly in IE6/7
-button,
-input {
-  line-height: normal; // 1
-  overflow: visible;  // 2
-}
-
-// 1. Removes default vertical scrollbar in IE6/7/8/9
-// 2. Improves readability and alignment in all browsers
-textarea {
-  overflow:auto;
-  vertical-align:top;
-  padding:0;
-}
-
-// Remove the webkit glow
-:focus {
-  outline:none;
-}
-
-// 1. Addresses box sizing set to content-box in IE8/9
-// 2. Addresses excess padding in IE8/9
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box; // 1
-  padding: 0; // 2
-}
-
-// Corrects inner padding and border displayed oddly in FF3/4
-// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-// Images
-// ------------------------------------------------
-// Chrome gives figures margin
-figure {
-  margin:0;
-}
-
 
 // 1. Nicer image sizing in IE
 // 2. Common default
-img {
+img[class*=kayessess] {
   -ms-interpolation-mode: bicubic; // 1
   display:block; // 2
 }
 
 // Lists
 // ------------------------------------------------
-ol,
-ul {
+ol[class*=kayessess],
+ul[class*=kayessess] {
   margin:0;
   padding:0;
 }
 
-dl,
-dd {
+dl[class*=kayessess],
+dd[class*=kayessess] {
   margin:0;
 }
 
@@ -126,12 +55,12 @@ li {
 // Headings
 // ------------------------------------------------
 // Resets all headings to look like normal text
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1[class*=kayessess],
+h2[class*=kayessess],
+h3[class*=kayessess],
+h4[class*=kayessess],
+h5[class*=kayessess],
+h6[class*=kayessess] {
   font-weight:inherit;
   line-height:inherit;
   font-size:inherit;
@@ -140,17 +69,17 @@ h6 {
 
 // Block Text
 // ------------------------------------------------
-p {
+p[class*=kayessess] {
   margin:0;
 }
 
-blockquote {
+blockquote[class*=kayessess] {
   margin:0;
 }
 
 
 // Improve the appearance of preformatted text
-pre {
+pre[class*=kayessess] {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -161,115 +90,118 @@ pre {
 
 // Inline Text
 // ------------------------------------------------
-cite {
+cite[class*=kayessess] {
   font-style:normal;
 }
 
-ins {
+ins[class*=kayessess] {
   text-decoration:none;
 }
 
-dfn {
+dfn[class*=kayessess] {
   font-style:inherit;
 }
 
-del {
+del[class*=kayessess] {
   text-decoration:none;
 }
 
-mark {
+mark[class*=kayessess] {
   background:none;
   color:inherit;
 }
 
-address {
+address[class*=kayessess] {
   font-style:normal;
 }
 
-tt, code, kbd, samp {
-  font-family: monospace;
+tt[class*=kayessess],
+code[class*=kayessess],
+kbd[class*=kayessess],
+samp[class*=kayessess] {
+  font-family: Meslo, Menlo, monospace;
   font-size: inherit;
 }
 
-b,
-strong {
+b[class*=kayessess],
+strong[class*=kayessess] {
   font-weight:inherit;
 }
 
-em {
+em[class*=kayessess] {
   font-style:inherit;
 }
 
-small {
+small[class*=kayessess] {
   font-size:100%;
 }
 
-q {
+q[class*=kayessess] {
   quotes: none;
+
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
 }
 
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-a {
+a[class*=kayessess] {
   font-weight:inherit;
   color:inherit;
   text-decoration:none;
+
+  &:hover,
+  &:active {
+    outline: none;
+  }
 }
 
-a:hover,
-a:active {
-  outline: none;
-}
-
-a img{
+a[class*=kayessess] img[class*=kayessess]{
   border: none;
 }
 
 
 // Set sub, sup without affecting line-height: gist.github.com/413930
-sub,
-sup {
+sub[class*=kayessess],
+sup[class*=kayessess] {
   font-size: 75%;
   line-height: 0;
   position: relative;
 }
 
-sup {
+sup[class*=kayessess] {
   top: -0.5em;
 }
 
-sub {
+sub[class*=kayessess] {
   bottom: -0.25em;
 }
 
 // HTML 5 Block Elements
 // ------------------------------------------------
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article[class*=kayessess],
+aside[class*=kayessess],
+details[class*=kayessess],
+figcaption[class*=kayessess],
+figure[class*=kayessess],
+footer[class*=kayessess],
+header[class*=kayessess],
+hgroup[class*=kayessess],
+menu[class*=kayessess],
+nav[class*=kayessess],
+section[class*=kayessess] {
   display:block;
 }
 
 // Tables
 // ------------------------------------------------
-table {
+table[class*=kayessess] {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-th {
+th[class*=kayessess] {
   font-weight:inherit;
 }

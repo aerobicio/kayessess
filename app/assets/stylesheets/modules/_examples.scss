@@ -1,0 +1,39 @@
+.kayessess__examples {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAAAAACo4kLRAAAAF0lEQVR4AWP4Dwff4WBoCyKYCOkhLQgAy9OIQG/ubwsAAAAASUVORK5CYII=');
+}
+
+.kayessess__examples__example {
+  @extend .padding-medium-top;
+  @extend .padding-medium-bottom;
+
+  position: relative;
+}
+
+.kayessess__examples__example > .kayessess__code {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: $blue;
+  color: #fff;
+  font-size: 10px;
+  padding: 6px;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+
+.kayessess__example__code {
+  @extend .padding-medium;
+  @extend .padding-wide-top;
+
+  font-size: 12px;
+  border-top: 2px solid #e5e5e5;
+}
+
+.kayessess__example__code__heading {
+  @extend .padding-medium-left;
+  @extend .padding-medium-right;
+  @extend .padding-medium-bottom;
+
+  text-transform: uppercase;
+  font-weight: bold;
+}

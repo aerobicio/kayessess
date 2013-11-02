@@ -1,5 +1,4 @@
 require_relative "section_example"
-require 'pry'
 
 module Kayessess
 
@@ -8,9 +7,14 @@ module Kayessess
     attr_reader :id, :name
 
     def initialize(id, name, section)
-      @id      = id
-      @name    = name
-      @section = section
+      @id             = id
+      @name           = name
+      @section        = section
+      @render_example = true
+    end
+
+    def to_param
+      reference.split('.').map(&:to_slug)
     end
 
     def reference
@@ -41,6 +45,10 @@ module Kayessess
 
     def to_partial_path
       "section"
+    end
+
+    def is_section?
+      true
     end
   end
 end

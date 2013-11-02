@@ -1,16 +1,17 @@
-<section class="kayessess__example <%= section_example.extra_classes %>">
-  <%= section_example.html %>
-</section>
+<div class="kayessess__examples">
+  <div class="kayessess__examples__example <%= section_example.extra_classes %>">
+    <%= section_example.html %>
+  </div>
 
-<section class="kayessess__modifiers">
   <% section_example.modifiers.each do |modifier| %>
-    <div class="kayessess__modifiers__modifier">
+    <div class="kayessess__examples__example is-modifier">
       <code class="kayessess__code"><%= modifier.name %></code>
       <%= section_example.html_for_modifier(modifier) %>
     </div>
   <% end %>
-</section>
+</div>
 
 <div class="kayessess__example__code">
+  <h6 class="kayessess__example__code__heading">Code Example</h6>
   <%= section_example.html_unescaped %>
 </div>

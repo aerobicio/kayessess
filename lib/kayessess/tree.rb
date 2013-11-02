@@ -18,7 +18,7 @@ module Kayessess
     end
 
     def node_for_path(path)
-      path.map(&:downcase).map(&:to_sym).reduce(@tree) {|branch, path|
+      path.map(&:to_slug).reduce(@tree) {|branch, path|
         if branch
           branch = branch.children_hash[path] || branch.sections_hash[path]
         else
@@ -36,7 +36,7 @@ module Kayessess
       sections.inject(root) {|tree, section|
         path = path_components(section.first)
         path.inject(tree) {|branch, node|
-          node_id = node.first
+          node_id = node.first.to_slug
           node_name = node.last
 
           # If this is the final item in a styleguide path then it should be a
@@ -58,7 +58,7 @@ module Kayessess
     end
 
     def path_components(path)
-      paths = path.split(".").map {|path| [path.downcase.to_sym, path] }
+      paths = path.split(".").map {|path| [path.to_slug, path] }
       Hash[*paths.flatten]
     end
   end

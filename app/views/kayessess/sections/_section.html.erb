@@ -1,22 +1,25 @@
 <article class="kayessess__section">
-  <header>
-    <%= link_to example_section_path(params[:id]) do %>
-      <h2 class="kayessess__section__heading">
-        <code class="kayessess__code"><%= section.name %> - <%= section.filename %></code>
-      </h2>
-    <% end %>
+  <header class="kayessess__section__header">
+    <h2 class="kayessess__section__heading">
+      <%= link_to "Example", example_section_path(section.to_param), class: 'kayessess__example__link' %>
+      Sub-section > Derp > <%= section.name %> <code class="kayessess__code"><%= section.filename %></code>
+    </h2>
   </header>
-  <div class="kayessess__section__description">
-    <%= section.description %>
+  <div class="kayessess__section__info">
+    <div class="kayessess__section__description">
+      <%= section.description %>
+    </div>
     <% if section.modifiers.any? %>
-      <table class="kayessess__section__modifiers">
-        <% section.modifiers.each do |modifier| %>
-          <tr>
-            <td><code><%= modifier.name %></code></td>
-            <td><%= modifier.description %></td>
-          </tr>
-        <% end %>
-      </table>
+      <div class="kayessess__section__modifiers">
+        <table>
+          <% section.modifiers.each do |modifier| %>
+            <tr>
+              <td><code class="kayessess__code"><%= modifier.name %></code></td>
+              <td><%= modifier.description %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
     <% end %>
   </div>
   <%= render :partial => section.example_partial_path, locals: {section: section} %>

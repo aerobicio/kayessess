@@ -1,18 +1,23 @@
-html,
+&,
 body {
   height: 100%;
   font-family: $font-family;
 }
 
-html{
-  // set root font-size to be 10px so that it is
-  // convenient for sizing things from in rem/em
-  font-size: 62.5%;  // 10px
+& {
   background-color: $background-color;
   color: $color;
-}
 
-body {
-  // Set actual desired optical font-size
-  @include font-size($base-font-size, $line-height-ratio);
+  &.is-example {
+    padding: 50px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAAAAACo4kLRAAAAF0lEQVR4AWP4Dwff4WBoCyKYCOkhLQgAy9OIQG/ubwsAAAAASUVORK5CYII=');
+
+    .kayessess__examples{
+      background-image: none;
+    }
+
+    .kayessess__example__code {
+      display: none;
+    }
+  }
 }

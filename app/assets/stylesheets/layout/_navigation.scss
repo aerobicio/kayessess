@@ -1,5 +1,7 @@
 .kayessess__navigation {
-
+  @extend .padding-medium;
+  @extend .padding-wide-left;
+  @extend .padding-wide-right;
 }
 
 .kayessess__navigation__item {

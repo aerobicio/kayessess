@@ -1,0 +1,80 @@
+.kayessess__section {
+  @extend .margin-wide-bottom;
+
+  clear: both;
+
+  &.is-transparent {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///5kzZxiAGMgCCCAGFB5AADGCRBgYzp49CyRZIJSxsTGQBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwBiAz+yKSKSCQAAAABJRU5ErkJggg==');
+  }
+}
+
+.kayessess__section__header {
+
+}
+
+.kayessess__example__link {
+  @extend .margin-medium-right;
+
+  background-color: #ccc;
+  color: #fff;
+  font-size: 9px;
+  padding: 6px;
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+
+.kayessess__section__heading {
+  @extend .padding-wide-left;
+  @extend .padding-wide-right;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.kayessess__section__info {
+  @extend .padding-wide;
+
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.kayessess__section__description {
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 800px;
+
+  a {
+    color: $purple;
+  }
+
+  p,
+  ul,
+  ol {
+    @extend .margin-medium-bottom;
+  }
+
+  code {
+    font-family: Meslo, Menlo, monospace;
+    background-color: #f2f2f2;
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+  }
+}
+
+.kayessess__section__modifiers {
+  @extend .margin-wide-top;
+
+  font-size: 12px;
+  border: 2px solid #f2f2f2;
+  border-radius: 3px;
+
+  td {
+    padding: 8px;
+    border-bottom: 2px solid #f2f2f2;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}

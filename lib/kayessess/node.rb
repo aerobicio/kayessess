@@ -18,5 +18,9 @@ module Kayessess
     def sections
       @sections_hash.values
     end
+
+    def is_section?
+      false
+    end
   end
 end
