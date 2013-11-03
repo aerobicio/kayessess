@@ -1,0 +1,21 @@
+.kayessess__tree {
+  @extend .padding-medium;
+}
+
+.kayessess__tree__path {
+  @extend .margin-wide-left;
+
+  & & {
+    @extend .margin-wide-left;
+
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.kayessess__node {
+  @extend .padding-medium-top;
+  @extend .padding-medium-bottom;
+
+  display: block;
+}

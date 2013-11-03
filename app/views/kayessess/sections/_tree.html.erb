@@ -1,0 +1,9 @@
+<ol class="kayessess__tree__path">
+  <li class="kayessess__branch">
+    <%= link_to(tree.name, section_path(tree.to_path), class: 'kayessess__node') %>
+    <ol class="kayessess__tree__path">
+      <%= render :partial => "tree_node", :collection => tree.sections %>
+    </ol>
+    <%= render :partial => "tree", :collection => tree.children %>
+  </li>
+</ol>

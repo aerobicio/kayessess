@@ -6,7 +6,7 @@ module Kayessess
     before_filter :find_node, only: [:show, :example]
 
     def index
-      @sections = @styleguide.sections
+      @tree_root = @styleguide.tree.root
     end
 
     def show;
