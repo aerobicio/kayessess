@@ -1,7 +1,5 @@
 module Kayessess
 
-  require 'pry'
-
   # The SectionsController is responsible for providing actions for listing and
   # showing sections of the styleguide
   class SectionsController < Kayessess::ApplicationController
