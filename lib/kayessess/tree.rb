@@ -33,10 +33,8 @@ module Kayessess
 
     def build_tree(sections)
       last_node = root_node
-
       sections.inject(root_node) {|tree, section|
         path = path_components(section.first)
-
         path.inject(tree) {|branch, current_node|
           node = last_node = new_node(current_node, last_node, branch, section.last)
           node
