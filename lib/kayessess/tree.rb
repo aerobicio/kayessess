@@ -36,7 +36,7 @@ module Kayessess
       sections.inject(root_node) {|tree, section|
         path = path_components(section.first)
         path.inject(tree) {|branch, current_node|
-          node = last_node = new_node(current_node, last_node, branch, section.last)
+          node = last_node = new_node(current_node, last_node, branch, *section)
           node
         }
         tree
@@ -51,11 +51,12 @@ module Kayessess
       node.last
     end
 
-    def new_node(node, last_node, branch, section)
-      node_id   = id_for_node(node)
-      node_name = name_for_node(node)
+    def new_node(node, last_node, branch, path, section)
+      node_id       = id_for_node(node)
+      node_name     = name_for_node(node)
+      terminator_id = terminator_id_for_path(path)
 
-      if node_id == path.keys.last
+      if node_id == terminator_id
         new_section_for_branch(branch, node_id, node_name, last_node, section)
       else
         new_node_for_branch(branch, node_id, node_name, last_node)
@@ -72,6 +73,10 @@ module Kayessess
 
     def root_node
       @root_node ||= Kayessess::Node.new(:root, "Styleguide")
+    end
+
+    def terminator_id_for_path(path)
+      path_components(path).keys.last
     end
 
     def path_components(path)
