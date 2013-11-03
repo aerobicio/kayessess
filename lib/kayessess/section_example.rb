@@ -1,4 +1,7 @@
 module Kayessess
+
+  # SectionExample is a untility class for helping to render Section Examples.
+  # It is passed into the section_example partial and then used as a view object.
   class SectionExample
     attr_accessor :section, :html
 

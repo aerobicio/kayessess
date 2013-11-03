@@ -32,7 +32,7 @@ describe Kayessess::Section do
 
   describe "#example_partial_path" do
     subject { section.example_partial_path }
-    it { should == "styleguide/examples/foo/bar/hello-world" }
+    it { should == "styleguide/examples/foo/bar/hello_world" }
   end
 
   describe "#to_partial_path" do

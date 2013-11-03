@@ -1,6 +1,9 @@
 require 'to_slug'
 
 module Kayessess
+
+  # Node represents an item in a Tree. It provides some helpers for navigating
+  # the tree that is constructed from styleguide reference paths.
   class Node
     attr_reader :id, :name, :parent
     attr_accessor :children_hash, :sections_hash

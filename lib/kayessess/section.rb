@@ -32,7 +32,7 @@ module Kayessess
     end
 
     def example_partial_path
-      reference_path = reference.split('.').map(&:to_slug)
+      reference_path = reference.split('.').map {|s| s.parameterize('_')}
       "styleguide/examples/#{File.join(reference_path)}"
     end
 

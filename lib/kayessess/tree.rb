@@ -4,6 +4,8 @@ require_relative "node"
 module Kayessess
   class SectionNotFound < StandardError; end
 
+  # Tree is responsible for building a graph that represents the styleguide
+  # section heirarchy.
   class Tree
     def initialize(sections)
       @tree = build_tree(sections)
@@ -30,32 +32,48 @@ module Kayessess
   private
 
     def build_tree(sections)
-      root = Kayessess::Node.new(:root, "Styleguide")
-      last_node = root
+      last_node = root_node
 
-      sections.inject(root) {|tree, section|
+      sections.inject(root_node) {|tree, section|
         path = path_components(section.first)
-        path.inject(tree) {|branch, node|
-          node_id = node.first.to_slug
-          node_name = node.last
 
-          # If this is the final item in a styleguide path then it should be a
-          # styleguide section.
-          if node_id == path.keys.last
-            branch.sections_hash[node_id] = Kayessess::Section.new(node_id, path.values.last, last_node, section.last)
-            last_node = root
-
-          # Add the new node to the branch.
-          else
-            new_node = Kayessess::Node.new(node_id, node_name, last_node)
-            branch.children_hash[node_id] ||= new_node
-            last_node = branch.children_hash[node_id]
-          end
-
-          branch.children_hash[node_id]
+        path.inject(tree) {|branch, current_node|
+          node = last_node = new_node(current_node, last_node, branch, section.last)
+          node
         }
         tree
       }
+    end
+
+    def id_for_node(node)
+      node.first.to_slug
+    end
+
+    def name_for_node(node)
+      node.last
+    end
+
+    def new_node(node, last_node, branch, section)
+      node_id   = id_for_node(node)
+      node_name = name_for_node(node)
+
+      if node_id == path.keys.last
+        new_section_for_branch(branch, node_id, node_name, last_node, section)
+      else
+        new_node_for_branch(branch, node_id, node_name, last_node)
+      end
+    end
+
+    def new_section_for_branch(branch, id, name, parent, section)
+      branch.sections_hash[id] = Kayessess::Section.new(id, name, parent, section)
+    end
+
+    def new_node_for_branch(branch, id, name, parent)
+      branch.children_hash[id] ||= Kayessess::Node.new(id, name, parent)
+    end
+
+    def root_node
+      @root_node ||= Kayessess::Node.new(:root, "Styleguide")
     end
 
     def path_components(path)

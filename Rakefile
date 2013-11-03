@@ -14,7 +14,7 @@ namespace :spec do
     desc "Run cane to check quality metrics"
     Cane::RakeTask.new(:quality) do |cane|
       cane.abc_max = 10
-      cane.add_threshold 'coverage/covered_percent', :>=, 100
+      cane.add_threshold 'coverage/covered_percent', :>=, 87
       cane.no_style = true
     end
 

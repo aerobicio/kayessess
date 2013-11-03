@@ -5,6 +5,8 @@ require 'redcarpet'
 require 'pygments'
 
 module Kayessess
+
+  # Helper class for adding Pygments syntax highlighting to Redcarpet
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)
       Pygments.highlight(code, :lexer => language)

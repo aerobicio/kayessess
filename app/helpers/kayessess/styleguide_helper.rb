@@ -1,4 +1,6 @@
 module Kayessess
+
+  # Helpers for building styleguides
   module StyleguideHelper
     def styleguide_example_for(section, options = {}, &block)
       html = capture(&block)
@@ -14,19 +16,25 @@ module Kayessess
     end
 
     def reference_breadcrumb_links(node)
-      nav = []
-      nav_divider = content_tag(:span, " > ", class: 'kayessess__breadcrumb__divider')
-
       content_tag :span, class: 'kayessess__breadcrumb' do
         node.parents.inject([]) {|crumbs, parent_node|
-          unless parent_node.parent.nil?
-            crumbs << link_to(section_path(parent_node.to_path)) do
-              "#{parent_node.name}#{nav_divider}".html_safe
-            end
-          end
-          crumbs
+          crumbs << breadcrumb_crumb_for_node(parent_node)
         }.reverse.join('').html_safe
       end
+    end
+
+  private
+
+    def breadcrumb_crumb_for_node(node)
+      unless node.parent.nil?
+        link_to("#{node.name}#{breadcrumb_divider}".html_safe, section_path(node.to_path))
+      else
+        ''
+      end
+    end
+
+    def breadcrumb_divider
+      content_tag(:span, " > ", class: 'kayessess__breadcrumb__divider')
     end
   end
 end
