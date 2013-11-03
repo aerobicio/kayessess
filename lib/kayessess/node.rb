@@ -11,6 +11,27 @@ module Kayessess
       @sections_hash = sections_hash
     end
 
+    def to_param
+      name.to_slug
+    end
+
+    def to_path
+      paths = parents.reduce([self.to_param]) {|paths, node|
+        paths << node.to_param unless node.parent.nil?
+        paths
+      }.reverse
+      File.join(paths)
+    end
+
+    def parents(&block)
+      return to_enum(:parents) unless block_given?
+      node = self
+      while node = node.parent do
+        break if node.nil?
+        yield node
+      end
+    end
+
     def children
       @children_hash.values
     end

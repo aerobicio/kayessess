@@ -1,20 +1,13 @@
 require_relative "section_example"
+require_relative "node"
 
 module Kayessess
 
   # A wrapper around KSS section object
-  class Section
-    attr_reader :id, :name
-
-    def initialize(id, name, section)
-      @id             = id
-      @name           = name
-      @section        = section
-      @render_example = true
-    end
-
-    def to_param
-      reference.split('.').map(&:to_slug)
+  class Section < Kayessess::Node
+    def initialize(id, name, section, parent)
+      @section = section
+      super(id, name, parent)
     end
 
     def reference

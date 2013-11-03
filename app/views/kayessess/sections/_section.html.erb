@@ -1,9 +1,13 @@
 <article class="kayessess__section">
   <header class="kayessess__section__header">
     <h2 class="kayessess__section__heading">
-      <%= link_to "Example", example_section_path(section.to_param), class: 'kayessess__example__link' %>
-      Sub-section > Derp > <%= section.name %> <code class="kayessess__code"><%= section.filename %></code>
+      <%= link_to "Example", example_section_path(section.to_path), class: 'kayessess__example__link' %>
+      <%= reference_breadcrumb_links(section) %>
+      <%= section.name %>
     </h2>
+    <div class="kayessess__section__metadata">
+      <code class="kayessess__code"><%= section.reference %></code> defined in <code class="kayessess__code"><%= section.filename %></code>
+    </div>
   </header>
   <div class="kayessess__section__info">
     <div class="kayessess__section__description">

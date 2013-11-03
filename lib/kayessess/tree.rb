@@ -42,7 +42,8 @@ module Kayessess
           # If this is the final item in a styleguide path then it should be a
           # styleguide section.
           if node_id == path.keys.last
-            branch.sections_hash[node_id] = Kayessess::Section.new(node_id, path.values.last, section.last)
+            branch.sections_hash[node_id] = Kayessess::Section.new(node_id, path.values.last, section.last, last_node)
+            last_node = root
 
           # Add the new node to the branch.
           else

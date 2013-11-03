@@ -3,8 +3,7 @@
 }
 
 .kayessess__examples__example {
-  @extend .padding-medium-top;
-  @extend .padding-medium-bottom;
+  @include clearfix;
 
   position: relative;
 }

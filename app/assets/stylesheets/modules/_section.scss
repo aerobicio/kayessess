@@ -1,5 +1,7 @@
 .kayessess__section {
   @extend .margin-wide-bottom;
+  @extend .padding-wide-bottom;
+  @extend .padding-wide-top;
 
   clear: both;
 
@@ -9,7 +11,19 @@
 }
 
 .kayessess__section__header {
+  @extend .padding-wide-left;
+  @extend .padding-wide-right;
+}
 
+.kayessess__breadcrumb {
+  @for $i from 1 through 5 {
+    $x: 5 - $i;
+    a:nth-last-child(#{$x}) { opacity: (1.0 - $x * 0.2); }
+  }
+}
+
+.kayessess__breadcrumb__divider {
+  opacity: 0.5;
 }
 
 .kayessess__example__link {
@@ -18,7 +32,7 @@
   background-color: #ccc;
   color: #fff;
   font-size: 9px;
-  padding: 6px;
+  padding: 5px 6px;
   float: left;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -26,11 +40,25 @@
 }
 
 .kayessess__section__heading {
-  @extend .padding-wide-left;
-  @extend .padding-wide-right;
+  @extend .margin-medium-bottom;
 
   font-size: 18px;
   font-weight: bold;
+
+  .kayessess__code {
+    float: right;
+  }
+}
+
+.kayessess__section__metadata {
+  font-size: 12px;
+
+  .kayessess__code {
+    font-family: Meslo, Menlo, monospace;
+    background-color: #f2f2f2;
+    padding: 0.2em 0.5em;
+    font-size: 0.8em;
+  }
 }
 
 .kayessess__section__info {
