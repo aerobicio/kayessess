@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet'
   s.add_dependency 'pygments.rb', '>= 0.5.2'
   s.add_dependency 'to_slug', '>= 1.0.8'
+  s.add_dependency 'pry'
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'combustion', '~> 0.4.0'

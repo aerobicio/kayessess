@@ -6,8 +6,9 @@ module Kayessess
   # A wrapper around KSS section object
   class Section < Kayessess::Node
     def initialize(id, name, parent, section)
-      @section = section
       super(id, name, parent)
+
+      @section = section
     end
 
     def reference

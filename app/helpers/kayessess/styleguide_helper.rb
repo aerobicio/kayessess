@@ -1,4 +1,5 @@
 module Kayessess
+  require 'pry'
 
   # Helpers for building styleguides
   module StyleguideHelper
@@ -10,8 +11,9 @@ module Kayessess
     end
 
     def section_navigation
-      @styleguide.root_sections.inject([]){|nav, section|
-        nav << link_to(section.id, section_path(section.to_path), class: 'kayessess__navigation__item')
+      @styleguide.root_sections.inject([]){|nav, node|
+        nav << link_to(node.id, section_path(node.to_path), class: 'kayessess__navigation__item')
+        nav
       }.join('').html_safe
     end
 

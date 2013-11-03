@@ -9,10 +9,7 @@ module Kayessess
       @sections = @styleguide.sections
     end
 
-    def show
-      if @node.is_section?
-        render(:partial => "section", :locals => {:section => section})
-      end
+    def show;
     end
 
     def example

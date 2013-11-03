@@ -36,7 +36,7 @@ module Kayessess
       sections.inject(root_node) {|tree, section|
         path = path_components(section.first)
         path.inject(tree) {|branch, current_node|
-          node = last_node = new_node(current_node, last_node, branch, *section)
+          node, last_node = new_node(current_node, last_node, branch, *section)
           node
         }
         tree
@@ -64,11 +64,15 @@ module Kayessess
     end
 
     def new_section_for_branch(branch, id, name, parent, section)
-      branch.sections_hash[id] = Kayessess::Section.new(id, name, parent, section)
+      node = Kayessess::Section.new(id, name, parent, section)
+      branch.sections_hash[id] = node
+      [branch.sections_hash[id], root_node]
     end
 
     def new_node_for_branch(branch, id, name, parent)
-      branch.children_hash[id] ||= Kayessess::Node.new(id, name, parent)
+      node = Kayessess::Node.new(id, name, parent)
+      branch.children_hash[id] ||= node
+      [branch.children_hash[id], node]
     end
 
     def root_node

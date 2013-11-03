@@ -1,7 +1,11 @@
 <section class="kayessess__node">
   <div class="kayessess__node__sections">
-    <% node.sections.each do |section| %>
-      <%= render :partial => "section", :locals => {:section => section} %>
+    <% if node.is_section? %>
+      <%= render :partial => "section", :locals => {:section => node} %>
+    <% else %>
+      <% node.sections.each do |section| %>
+        <%= render :partial => "section", :locals => {:section => section} %>
+      <% end %>
     <% end %>
   </div>
 

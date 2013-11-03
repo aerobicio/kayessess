@@ -21,11 +21,10 @@ module Kayessess
     end
 
     def to_path
-      paths = parents.reduce([self.to_param]) {|paths, node|
+      File.join(parents.reduce([self.to_param]) {|paths, node|
         paths << node.to_param unless node.parent.nil?
         paths
-      }.reverse
-      File.join(paths)
+      }.reverse)
     end
 
     def parents(&block)
