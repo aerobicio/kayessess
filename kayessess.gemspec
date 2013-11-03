@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
 
   s.files         = Dir["{app,config,lib}/**/*", "README.md", "LICENSE"]
   s.test_files    = Dir["spec/**/*"]
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
   s.add_dependency 'bourbon'
@@ -24,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet'
   s.add_dependency 'pygments.rb', '>= 0.5.2'
   s.add_dependency 'to_slug', '>= 1.0.8'
-  s.add_dependency 'pry'
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'combustion', '~> 0.4.0'
