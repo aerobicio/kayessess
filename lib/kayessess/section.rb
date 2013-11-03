@@ -5,7 +5,7 @@ module Kayessess
 
   # A wrapper around KSS section object
   class Section < Kayessess::Node
-    def initialize(id, name, section, parent)
+    def initialize(id, name, parent, section)
       @section = section
       super(id, name, parent)
     end
@@ -32,7 +32,7 @@ module Kayessess
     end
 
     def example_partial_path
-      reference_path = reference.split('.').map {|s| s.parameterize('_')}
+      reference_path = reference.split('.').map(&:to_slug)
       "styleguide/examples/#{File.join(reference_path)}"
     end
 
