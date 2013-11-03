@@ -1,3 +1,5 @@
+require 'to_slug'
+
 module Kayessess
   class Node
     attr_reader :id, :name, :parent
