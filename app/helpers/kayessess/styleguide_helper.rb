@@ -1,7 +1,10 @@
 module Kayessess
   # Helpers for building styleguides
   module StyleguideHelper
-    include Rails.application.routes.url_helpers
+
+    def method_missing(name, *args)
+      main_app.sign_out_path(*args)
+    end
 
     def styleguide_example_for(section, options = {}, &block)
       html = capture(&block)
