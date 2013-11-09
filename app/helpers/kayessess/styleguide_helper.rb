@@ -1,8 +1,8 @@
 module Kayessess
-  require 'pry'
-
   # Helpers for building styleguides
   module StyleguideHelper
+    include Rails.application.routes.url_helpers
+
     def styleguide_example_for(section, options = {}, &block)
       html = capture(&block)
       section_example = Kayessess::SectionExample.new(section, html, options)
