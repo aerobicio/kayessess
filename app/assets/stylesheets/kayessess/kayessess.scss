@@ -6,12 +6,13 @@
 @import "constants";
 @import "neat";
 
-// only apply a reset to things that are kayessess
+
+// // only apply a reset to things that are kayessess
 [class*=kayessess] {
   @import "lib/reset";
 }
 
-// Namespace everything inside a scope
+// // Namespace everything inside a scope
 // ----------------------------------------
 html.kayessess {
 
