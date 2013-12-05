@@ -46,7 +46,7 @@ dd[class*=kayessess] {
 // This allows us to use lists for semantic markup
 // without needing to set this each time.
 // Lists only look like lists in blocks of copy.
-li {
+li[class*=kayessess] {
   display: block;
   padding: 0;
   margin: 0;
