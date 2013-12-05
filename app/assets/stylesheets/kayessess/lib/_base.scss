@@ -1,8 +1,12 @@
-&,
-body {
+& {
   font-family: $font-family;
+}
+
+&,
+& > body {
   min-height: 100%;
   height: 100%;
+  background-color: #fff;
 }
 
 & {
@@ -11,8 +15,9 @@ body {
 
   &.is-example {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAAAAACo4kLRAAAAF0lEQVR4AWP4Dwff4WBoCyKYCOkhLQgAy9OIQG/ubwsAAAAASUVORK5CYII=');
+    background-color: red;
 
-    .kayessess__examples{
+    .kayessess__examples {
       @include clearfix;
 
       padding: 50px;

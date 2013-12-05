@@ -5,10 +5,11 @@
   <meta charset="utf-8">
 
   <%= stylesheet_link_tag "application", media: "all" %>
-  <%= stylesheet_link_tag "kayessess", media: "all" %>
+  <%= stylesheet_link_tag "kayessess/kayessess.css", media: "all" %>
 </head>
 <body>
   <%= yield %>
-  <%= javascript_include_tag "kayessess" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "kayessess/kayessess" %>
 </body>
 </html>
