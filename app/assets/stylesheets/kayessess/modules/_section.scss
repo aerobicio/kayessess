@@ -13,9 +13,13 @@
 .kayessess__section__header {
   @extend .padding-wide-left;
   @extend .padding-wide-right;
+
+  font-family: $font-family;
 }
 
 .kayessess__breadcrumb {
+  a { color: #1DAFEA; }
+
   @for $i from 1 through 5 {
     $x: 5 - $i;
     a:nth-last-child(#{$x}) { opacity: (1.0 - $x * 0.2); }
@@ -64,6 +68,7 @@
 .kayessess__section__info {
   @extend .padding-wide;
 
+  font-family: $font-family;
   border-bottom: 2px solid #e5e5e5;
 }
 
