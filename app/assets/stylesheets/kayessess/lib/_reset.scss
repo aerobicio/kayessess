@@ -14,7 +14,7 @@ html.kayessess {
 
 // 1. Clear default browser margin
 // 2. Default line-height inconsistent across browsers
-body {
+body[class*=kayessess] {
   margin:0; // 1
   line-height:1; // 2
   background-color: #fff;
