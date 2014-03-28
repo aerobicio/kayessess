@@ -13,10 +13,11 @@ module Kayessess
     end
 
     def example
+      @example = true
       render layout: 'kayessess/example'
     end
 
-  private
+    private
 
     def find_node
       @node = @styleguide.section(params[:id])

@@ -1,3 +1,4 @@
+#  encoding: utf-8
 module Kayessess
 
   # SectionExample is a untility class for helping to render Section Examples.

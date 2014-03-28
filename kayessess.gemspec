@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kss', '>= 0.5.0'
   s.add_dependency 'rails', '>= 3.0.0'
   s.add_dependency 'redcarpet'
-  s.add_dependency 'pygments.rb', '>= 0.5.2'
+  s.add_dependency 'pygments.rb', '>= 0.5.4'
   s.add_dependency 'to_slug', '>= 1.0.8'
 
   s.add_development_dependency 'appraisal'
