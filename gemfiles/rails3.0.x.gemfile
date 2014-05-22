@@ -7,4 +7,10 @@ gem "neat"
 gem "awesome_print"
 gem "rails", "~> 3.0"
 
-gemspec :path=>"../"
+group :test, :development do
+  gem "actionpack"
+  gem "cane"
+  gem "sprockets"
+end
+
+gemspec :path => "../"
