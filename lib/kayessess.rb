@@ -6,6 +6,8 @@ require 'pygments'
 
 module Kayessess
 
+  mattr_accessor :styleguide_location
+
   # Helper class for adding Pygments syntax highlighting to Redcarpet
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)

@@ -9,7 +9,7 @@ module Kayessess
     def parse_styles
       require 'kss'
 
-      parser = Kss::Parser.new(File.join(Rails.root, '/app/assets/stylesheets'))
+      parser = Kss::Parser.new(File.join(Rails.root, Kayessess.styleguide_location || '/app/assets/stylesheets'))
       @styleguide = Kayessess::Styleguide.new(parser)
     end
 
